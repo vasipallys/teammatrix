@@ -1,0 +1,31 @@
+Squad name,Book of work,start date,end date,description if any
+Backend Team,FX Trading Engine Optimization,2024-01-01,2024-01-31,Performance optimization for FX trading engine to reduce latency by 50%
+Frontend Team,Trading Dashboard Redesign,2024-01-08,2024-02-15,Complete UI/UX overhaul of the main trading dashboard with new real-time charts
+Mobile Team,Biometric Authentication,2024-01-15,2024-02-28,Implement fingerprint and face ID authentication for mobile banking app
+DevOps Team,Kubernetes Migration Phase 1,2024-01-01,2024-02-15,Migrate first set of microservices to Kubernetes cluster
+Product Team,Q1 Feature Planning,2024-01-01,2024-01-15,Define and prioritize features for Q1 2024 release
+Backend Team,Risk Engine Upgrade,2024-02-01,2024-03-15,Upgrade risk calculation engine with new regulatory requirements
+Data Team,Real-time Analytics Pipeline,2024-01-22,2024-03-31,Build Apache Kafka based real-time analytics pipeline
+Design Team,Mobile App Redesign Phase 1,2024-01-08,2024-02-20,Create new design system for mobile banking application
+Frontend Team,Compliance Dashboard,2024-02-16,2024-03-31,Build new compliance monitoring dashboard for regulators
+Mobile Team,Cross-platform Payment SDK,2024-03-01,2024-04-30,Develop unified payment SDK for iOS and Android
+Backend Team,Order Management System v2,2024-03-16,2024-05-31,Complete rewrite of order management system with event sourcing
+DevOps Team,Disaster Recovery Setup,2024-02-16,2024-03-31,Implement multi-region disaster recovery infrastructure
+Product Team,User Research Sprint,2024-01-16,2024-01-31,Conduct user interviews and usability testing for new features
+Data Team,Data Quality Framework,2024-04-01,2024-05-15,Implement automated data quality monitoring and alerting
+Frontend Team,Performance Optimization,2024-04-01,2024-04-30,Optimize frontend bundle size and loading performance
+Mobile Team,Offline Mode Support,2024-05-01,2024-06-30,Add offline transaction queuing and sync capabilities
+Design Team,Design System Documentation,2024-02-21,2024-03-15,Create comprehensive documentation for design system
+Backend Team,API Gateway Implementation,2024-06-01,2024-07-31,Implement centralized API gateway with rate limiting
+DevOps Team,Security Hardening,2024-04-01,2024-05-15,Security audit and hardening of all infrastructure
+Product Team,Q2 Roadmap Planning,2024-03-15,2024-03-31,Plan features and priorities for Q2 2024
+Data Team,Machine Learning Pipeline,2024-05-16,2024-07-31,Build ML pipeline for fraud detection
+Frontend Team,Accessibility Improvements,2024-05-01,2024-05-31,Ensure WCAG 2.1 AA compliance across all web applications
+Mobile Team,Push Notification System,2024-07-01,2024-07-31,Implement rich push notifications with deep linking
+Design Team,Mobile App Redesign Phase 2,2024-03-16,2024-04-30,Complete mobile app redesign with new components
+Backend Team,Database Sharding,2024-08-01,2024-09-30,Implement database sharding for scalability
+DevOps Team,Monitoring Stack Upgrade,2024-05-16,2024-06-30,Upgrade to Prometheus and Grafana for monitoring
+Product Team,Competitive Analysis,2024-04-01,2024-04-15,Analyze competitor features and market positioning
+Data Team,Data Warehouse Migration,2024-08-01,2024-10-31,Migrate from on-premise to cloud data warehouse
+Frontend Team,WebSocket Implementation,2024-06-01,2024-06-30,Implement WebSocket for real-time updates
+Mobile Team,App Performance Monitoring,2024-08-01,2024-08-31,Integrate APM tools for mobile app monitoring

@@ -1,0 +1,11 @@
+employeeID,cn,displayName,manager,title,country,mail
+STF001,jmitchell,John Mitchell,,Chief Technology Officer,USA,john.mitchell@techcorp.com
+STF002,schen,Sarah Chen,cn=jmitchell,VP Engineering,UK,sarah.chen@techcorp.com
+STF003,mbrown,Michael Brown,cn=jmitchell,VP Product,Singapore,michael.brown@techcorp.com
+STF004,erodriguez,Emily Rodriguez,cn=schen,Director Backend Engineering,UK,emily.rodriguez@techcorp.com
+STF005,dkim,David Kim,cn=schen,Director Frontend Engineering,USA,david.kim@techcorp.com
+STF006,lwang,Lisa Wang,cn=mbrown,Director Mobile Engineering,Singapore,lisa.wang@techcorp.com
+STF007,jwilson,James Wilson,cn=erodriguez,Senior Backend Engineer,UK,james.wilson@techcorp.com
+STF008,mgarcia,Maria Garcia,cn=erodriguez,Senior Backend Engineer,USA,maria.garcia@techcorp.com
+STF009,rtaylor,Robert Taylor,cn=erodriguez,Backend Engineer,UK,robert.taylor@techcorp.com
+STF010,jmartinez,Jessica Martinez,cn=dkim,Senior Frontend Engineer,USA,jessica.martinez@techcorp.com
