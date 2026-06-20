@@ -20,6 +20,7 @@ from datetime import datetime, timezone
 from functools import wraps
 import os
 import sys
+import time
 from typing import Dict, Any, Optional, Callable
 from enum import Enum
 import uuid
@@ -86,7 +87,7 @@ class EventLogger:
         self.security_logger = self._create_logger(
             'security',
             f"{self.log_dir}/security.log", 
-            level=logging.WARNING,
+            level=logging.INFO,
             format_type='security'
         )
         
@@ -111,6 +112,7 @@ class EventLogger:
         
         logger = logging.getLogger(f"{self.app_name}.{name}")
         logger.setLevel(level)
+        logger.propagate = False
         
         # Remove existing handlers to avoid duplicates
         logger.handlers.clear()
@@ -147,6 +149,8 @@ class EventLogger:
                 '[%(asctime)s] %(name)s [%(levelname)s] %(pathname)s:%(lineno)d - %(message)s',
                 datefmt='%Y-%m-%d %H:%M:%S UTC'
             )
+
+        formatter.converter = time.gmtime
         
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
@@ -253,7 +257,7 @@ class EventLogger:
     
     def log_file_upload(self, filename: str, user: str = None, file_size: int = 0,
                        file_type: str = None, status: str = "SUCCESS", processing_time: float = None,
-                       records_processed: int = 0, error: Exception = None):
+                       records_processed: int = 0, details: Dict = None, error: Exception = None):
         """Log file upload operations"""
         context = {
             'filename': filename,
@@ -262,7 +266,8 @@ class EventLogger:
             'file_type': file_type,
             'status': status,
             'processing_time': processing_time,
-            'records_processed': records_processed
+            'records_processed': records_processed,
+            'details': details or {}
         }
         
         if error:
@@ -351,15 +356,8 @@ class EventLogger:
         level = LogLevel.INFO if success else LogLevel.WARNING
         message = f"Security event: {event_type} - {'SUCCESS' if success else 'FAILED'}"
         
-        # Log to both main and security logger
+        # LogCategory.SECURITY is configured with the dedicated security logger.
         self.log_event(LogCategory.SECURITY, level, message, **context)
-        
-        # Security events always go to security logger
-        structured_message = f"{message} | Context: {json.dumps(self._build_context(LogCategory.SECURITY, **context), default=str)}"
-        if success:
-            self.security_logger.info(structured_message)
-        else:
-            self.security_logger.warning(structured_message)
     
     def log_performance_metric(self, metric_name: str, value: float, unit: str = "ms",
                               endpoint: str = None, details: Dict = None):
@@ -374,10 +372,6 @@ class EventLogger:
         
         message = f"Performance metric: {metric_name} = {value} {unit}"
         self.log_event(LogCategory.PERFORMANCE, LogLevel.INFO, message, **context)
-        
-        # Also log to performance logger
-        structured_message = f"{message} | Context: {json.dumps(self._build_context(LogCategory.PERFORMANCE, **context), default=str)}"
-        self.perf_logger.info(structured_message)
 
 # Global logger instance
 event_logger = EventLogger()

@@ -58,7 +58,7 @@ A cutting-edge, AI-powered organization visualization and workforce analytics pl
 **For detailed setup instructions, see [STARTUP_GUIDE.md](STARTUP_GUIDE.md)**
 
 ### Prerequisites
-- Python 3.8+ with pip
+- Python 3.11-3.13 with pip
 - Node.js 16+ with npm
 
 ### 1. Backend Setup
@@ -67,7 +67,8 @@ cd backend
 python -m venv venv
 # Windows: venv\Scripts\activate
 # macOS/Linux: source venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --upgrade pip setuptools wheel
+python -m pip install -r requirements.txt
 python run.py
 ```
 
@@ -230,11 +231,12 @@ The application is fully responsive and supports:
 
 ```dockerfile
 # Dockerfile example
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 COPY backend/requirements.txt .
-RUN pip install -r requirements.txt
+RUN python -m pip install --upgrade pip setuptools wheel \
+    && python -m pip install -r requirements.txt
 
 COPY backend/ .
 COPY frontend/dist/ ./static/

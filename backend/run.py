@@ -52,7 +52,9 @@ def run_server(app, config_class, logger):
             host='0.0.0.0',
             port=port,
             debug=debug,
-            threaded=True
+            threaded=True,
+            # Import-time WebSocket workers must only be started once.
+            use_reloader=False
         )
     except Exception as e:
         logger.error(f"Failed to start server: {e}")
